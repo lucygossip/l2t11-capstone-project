@@ -1,5 +1,6 @@
 :root {
   --affair: #6a4685;
+  --darkpurple: #660066;
   --eminence: #6C3082;
   --tacao: #6f3096;
   --white: #fff;
@@ -13,20 +14,12 @@
   text-align: center;
 }
 
-.App-header {
-
+.App-logo {
+  width: 100px;
 }
 
 .App-link {
   color: #61dafb;
-}
-
-nav {
-  background: var(--bg-nav);
-}
-
-.nav-link {
-  color: var(--font-color-nav) !important;
 }
 
 main {

@@ -5,7 +5,7 @@ import {
   setUsername,
   clearUserName,
 } from "../../store/usernameState";
-import { Form, Row, Col } from "react-bootstrap";
+import { Form, Container, Row, Col } from "react-bootstrap";
 
 export default function LoginForm() {
   const state = useSelector((state) => state.username);
@@ -24,39 +24,60 @@ export default function LoginForm() {
 
   return (
     <>
+      <style type="text/css">
+        {`
+        .text-gray {
+        color: #ccc;
+        font-size: 0.9rem;
+        }
+        .text-gray:hover {
+        color: #ddd;
+        }
+      `}
+      </style>
       {state.username === "" ? (
         <>
-          <Form inline>
-            <Form.Group as={Row} className="my-1">
-              <Form.Label column sm="2" className="text-light">
-                Login:
-              </Form.Label>
-              <Col sm="6">
-                <Form.Control
-                  size="sm"
-                  value={state.value}
-                  onChange={handleChange}
-                />
-              </Col>
-              <Col sm="4">
-                <Button size="sm" onClick={() => handleSubmit(state.value)}>
-                  Login
-                </Button>
-              </Col>
-            </Form.Group>
+          <Form>
+            <Container>
+              <Form.Group as={Row} className="p-3 align-items-center">
+                <Col sm="7">
+                  <Form.Control
+                    size="sm"
+                    value={state.value}
+                    onChange={handleChange}
+                  />
+                </Col>
+                <Col sm="2">
+                  <Button size="sm" onClick={() => handleSubmit(state.value)}>
+                    Login
+                  </Button>
+                </Col>
+                <Col sm="2">
+                  <a className="btn-link text-gray p-2" href="/Register">
+                    Register
+                  </a>
+                </Col>
+              </Form.Group>
+            </Container>
           </Form>
         </>
       ) : (
-        <Row className="my-2">
-          <Col sm="6" className="text-light">
-            Hello, {state.username}!
-          </Col>
-          <Col sm="4">
-            <Button size="sm" onClick={handleReset}>
-              Logout
-            </Button>
-          </Col>
-        </Row>
+        <>
+          <Form>
+            <Container>
+              <Form.Group as={Row} className="p-3">
+                <Form.Label column sm="9" className="text-light">
+                  Hello, {state.username}!
+                </Form.Label>
+                <Col sm="2">
+                  <Button size="sm" onClick={handleReset}>
+                    Logout
+                  </Button>
+                </Col>
+              </Form.Group>
+            </Container>
+          </Form>
+        </>
       )}
     </>
   );

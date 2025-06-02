@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Cart from "./pages/Cart";
 import Landing from "./pages/Landing";
 import Product from "./pages/Product";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/" element={<Landing />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       </main>
       </Container>

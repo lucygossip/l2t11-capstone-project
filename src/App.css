@@ -15,7 +15,8 @@
 }
 
 .App-logo {
-  width: 100px;
+  margin: 0 1rem;
+  height: 50px;
 }
 
 .App-link {
@@ -26,3 +27,11 @@ main {
   background: #000;
   color: #fff;
 }
+
+/* Testing */
+
+/*
+* {
+  border: 1px solid red;
+}
+*/

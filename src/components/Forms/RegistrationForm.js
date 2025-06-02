@@ -21,7 +21,10 @@ const validate = (values) => {
   if (!values.password) {
     errors.password = "Required";
   } else if (
-    !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s])\S{8,16}$/i.test(values.password)) {
+    !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s])\S{8,16}$/i.test(
+      values.password,
+    )
+  ) {
     errors.password =
       "Password must be 8-16 characters in length, and contain a lowercase letter, an uppercase letter, a number and a special character.";
   }

@@ -1,10 +1,15 @@
 import { Col, Row, Button, Card } from "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { addCartItem, updateTotalCost } from "../store/cartState";
 
 function ProductCards() {
+  const state = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
   const Products = [
-    { id: 0, name: "Test", description: "A description here" },
-    { id: 1, name: "Test1", description: "Another description here" },
-    { id: 2, name: "Test2", description: "More stuff"}
+    { id: 0, name: "Test", description: "A description here", cost: 1.25 },
+    { id: 1, name: "Test1", description: "Another description here", cost: 3 },
+    { id: 2, name: "Test2", description: "More stuff", cost: 2.48}
   ];
   return (
     <>
@@ -29,7 +34,11 @@ function ProductCards() {
             <Card.Body>
               <Card.Title className="text-purple">{product.name}</Card.Title>
               <Card.Text>{product.description}</Card.Text>
-              <Button variant="purple">Add to Cart</Button>
+              <Card.Text>£{product.cost.toFixed(2)}</Card.Text>
+              <Button variant="purple" onClick={() => { 
+                dispatch(addCartItem(product));
+                dispatch(updateTotalCost(product.cost));
+                }}>Add to Cart</Button>
             </Card.Body>
           </Card>
         </Col>

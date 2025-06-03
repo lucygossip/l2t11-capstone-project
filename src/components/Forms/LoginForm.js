@@ -1,4 +1,4 @@
-import { Button } from "react-bootstrap";
+import { Button, Nav } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import {
   changeInputValue,
@@ -6,6 +6,7 @@ import {
   clearUserName,
 } from "../../store/usernameState";
 import { Form, Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function LoginForm() {
   const state = useSelector((state) => state.username);
@@ -53,9 +54,7 @@ export default function LoginForm() {
                   </Button>
                 </Col>
                 <Col sm="2">
-                  <a className="btn-link text-gray p-2" href="/Register">
-                    Register
-                  </a>
+                   <Nav.Link as={Link} to="/Register" className="text-gray p-2">Register</Nav.Link>
                 </Col>
               </Form.Group>
             </Container>

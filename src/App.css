@@ -29,6 +29,10 @@ main {
   color: #fff;
 }
 
+.active {
+  background: var(--electric) !Important;
+  color: #fff !Important;
+}
 /* Testing */
 
 /*

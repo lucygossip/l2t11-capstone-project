@@ -3,9 +3,9 @@ import { useState } from "react";
 
 export default function DeliveryMethods() {
   const [items, setItems] = useState([
-    { name: "Home Delivery (Express)", isActive: true },
-    { name: "Home Delivery (Standard)", isActive: false },
-    { name: "Click and Collect", isActive: false },
+    { id: 0, name: "Home Delivery (Express)", isActive: true },
+    { id: 1, name: "Home Delivery (Standard)", isActive: false },
+    { id: 2, name: "Click and Collect", isActive: false },
   ]);
 
   function handleChange(index) {
@@ -16,10 +16,9 @@ export default function DeliveryMethods() {
 
   const list = items.map((item, index) => {
     return (
-      <div className="mt-3">
+      <div key={item.id} className="mt-3">
         <Button
           variant="outline-light"
-          key={index}
           onClick={() => handleChange(index)}
           className={item.isActive ? "active" : null}
         >
@@ -34,7 +33,7 @@ export default function DeliveryMethods() {
       {list}
       {items.map((item) => {
         return item.isActive ? (
-          <p className="mt-2">You have chosen: {item.name}</p>
+          <p key={item.id} className="mt-2">You have chosen: {item.name}</p>
         ) : null;
       })}
     </>

@@ -2,7 +2,6 @@ import { Col, Row, Button, Card } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { addCartItem, updateTotalCost } from "../store/cartState";
 import fruit from "../images/fruit.jpg";
-import { useState } from "react";
 
 function ProductCards() {
   const state = useSelector((state) => state.cart);
@@ -64,7 +63,7 @@ function ProductCards() {
                 <Card.Text>£{product.cost.toFixed(2)}</Card.Text>
                 <Button
                   variant="purple"
-                  onClick={(e) => {
+                  onClick={() => {
                     dispatch(addCartItem(product));
                     dispatch(updateTotalCost(product.cost));
                     alert("Added.");

@@ -21,8 +21,6 @@ export default function LoginForm() {
     dispatch(clearUserName());
   };
 
-  console.log("Value is " + state.value);
-
   return (
     <>
       <style type="text/css">

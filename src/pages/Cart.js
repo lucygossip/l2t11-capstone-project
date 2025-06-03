@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
-import { Col, Row, Card } from "react-bootstrap";
+import { Col, Row, Card, Button } from "react-bootstrap";
 import DeliveryMethods from "../components/DeliveryMethods";
 import HelpModal from "../components/HelpModal";
+import { removeCartItem, removeFromTotal } from "../store/cartState";
 
 export default function Cart() {
   const state = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  console.log(state.cartItems);
   return (
     <>
         <Row className="mb-4 p-2">
@@ -34,6 +34,15 @@ export default function Cart() {
                     </Card.Title>
                     <Card.Text>{product.description}</Card.Text>
                     <Card.Text>£{product.cost.toFixed(2)}</Card.Text>
+                    <Button
+                    variant="outline-danger"
+                  onClick={() => {
+                    dispatch(removeCartItem(state.cartItems.indexOf(product)));
+                    dispatch(removeFromTotal(product.cost));
+                  }}
+                >
+                  Remove from Cart
+                </Button>
                   </Card.Body>
                 </Card>
               </Col>

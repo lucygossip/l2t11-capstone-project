@@ -24,6 +24,13 @@
   color: #61dafb;
 }
 
+.App-header {
+  background: url("./images/pngtree-dark-fruit-wallpaper-picture-image_2695132\ \(1\).png");
+  background-position: center;
+  background-size: cover;
+  height: 50vh;
+}
+
 .wrapper {
   min-height: 100vh;
 }
@@ -38,6 +45,11 @@ main {
   background: var(--electric) !important;
   color: #fff !important;
 }
+
+h1 {
+  font-size: clamp(4rem, 6vw, 6rem) !important;
+}
+
 /* Testing */
 
 /*

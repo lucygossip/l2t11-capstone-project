@@ -18,7 +18,7 @@ export default function Cart() {
       <Row>
         <Col md="6">
           {state.cartItems.map((product) => (
-            <Row key={product.id} className="mb-3">
+            <Row key={state.cartItems.indexOf(product)} className="mb-3">
               <Col>
                 <Card
                   style={{ width: "18rem" }}

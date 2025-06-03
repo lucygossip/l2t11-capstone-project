@@ -4,9 +4,9 @@ import { Row, Col } from "react-bootstrap";
 export default function Product() {
   return (
     <>
-    <Row className="p-2">
+    <Row className="p-2 mb-4">
       <Col>
-        <h2>Products</h2>
+        <h2 className="text-center">Products</h2>
       </Col>
     </Row>
     <ProductCards />

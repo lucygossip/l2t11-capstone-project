@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { Col, Row, Button, Card } from "react-bootstrap";
+import { Col, Row, Card } from "react-bootstrap";
 import DeliveryMethods from "../components/DeliveryMethods";
 import HelpModal from "../components/HelpModal";
 
@@ -9,9 +9,9 @@ export default function Cart() {
   console.log(state.cartItems);
   return (
     <>
-        <Row className="mb-3 p-2">
+        <Row className="mb-4 p-2">
             <Col>
-            <h3 className="text-center">Your Cart</h3>
+            <h2 className="text-center">Your Cart</h2>
             </Col>
         
         </Row>
@@ -27,7 +27,7 @@ export default function Cart() {
                   border="light"
                   className="m-auto"
                 >
-                  <Card.Img variant="top" src="holder.js/100px180" />
+                  <Card.Img variant="top" src={product.image} />
                   <Card.Body>
                     <Card.Title className="text-purple">
                       {product.name}

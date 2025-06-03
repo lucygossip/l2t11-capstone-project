@@ -3,6 +3,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import LoginForm from "./Forms/LoginForm";
 import Logo from "../images/fruit.jpg";
 
+// Navbar uses React router to handle links
 export default function StoreNav() {
   return (
     <>

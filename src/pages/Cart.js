@@ -59,14 +59,3 @@ export default function Cart() {
     </>
   );
 }
-
-/*
- <li>
-            <h3>{item.name}</h3>
-            <p>{item.description}</p>
-            <p>
-              <b>Cost: </b>
-              £{item.cost.toFixed(2)}
-            </p>
-          </li>
-*/

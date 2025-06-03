@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
+// A popup modal to show details about different delivery methods
 export default function HelpModal() {
+  // Setting the initial state of the modal
   const [show, setShow] = useState(false);
 
+  // Functions to handle show or close of the modal
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (

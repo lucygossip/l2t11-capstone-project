@@ -4,9 +4,11 @@ import { addCartItem, updateTotalCost } from "../store/cartState";
 import fruit from "../images/fruit.jpg";
 
 function ProductCards() {
+  // Use redux to manage the state of the cart and dispatch reducers
   const state = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
+  // Product list, each with a unique ID to use as a key
   const Products = [
     {
       id: 0,
@@ -47,6 +49,7 @@ function ProductCards() {
     `}
       </style>
       <Row xs={1} md={2} lg={3} className="g-4 p-2">
+        {/* Product list is mapped as cards */}
         {Products.map((product) => (
           <Col key={product.id}>
             <Card
@@ -61,6 +64,7 @@ function ProductCards() {
                 <Card.Title className="text-purple">{product.name}</Card.Title>
                 <Card.Text>{product.description}</Card.Text>
                 <Card.Text>£{product.cost.toFixed(2)}</Card.Text>
+                {/* Button dispatches reducers to carry out actions on click */}
                 <Button
                   variant="purple"
                   onClick={() => {

@@ -92,6 +92,9 @@ const RegistrationForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.username}
         />
+        {formik.touched.username && formik.errors.username ? (
+          <div className="text-danger">{formik.errors.username}</div>
+        ) : null}
       </Form.Group>
       <Form.Group className="mb-3">
         <Form.Label htmlFor="email">Email</Form.Label>

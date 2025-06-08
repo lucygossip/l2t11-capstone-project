@@ -17,6 +17,13 @@ export default function LoginForm() {
   const handleSubmit = (input) => {
     dispatch(setUsername(input));
   };
+  const handleKeyDown = (e, input) => {
+    e.preventDefault();
+    if(e.key === "Enter") {
+      console.log(input);
+      handleSubmit(input);
+    }
+  }
   const handleReset = () => {
     dispatch(clearUserName());
   };
@@ -44,6 +51,7 @@ export default function LoginForm() {
                     size="sm"
                     value={state.value}
                     onChange={handleChange}
+                    onKeyDown={(e) => handleKeyDown(e, state.value)}
                   />
                 </Col>
                 <Col sm="2">

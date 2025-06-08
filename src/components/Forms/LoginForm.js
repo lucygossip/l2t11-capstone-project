@@ -18,12 +18,12 @@ export default function LoginForm() {
     dispatch(setUsername(input));
   };
   const handleKeyDown = (e, input) => {
-    if(e.key === "Enter") {
+    if (e.key === "Enter") {
       e.preventDefault();
       console.log(input);
       handleSubmit(input);
     }
-  }
+  };
   const handleReset = () => {
     dispatch(clearUserName());
   };
@@ -44,9 +44,9 @@ export default function LoginForm() {
       {state.username === "" ? (
         <>
           <Form>
-            <Container>
-              <Form.Group as={Row} className="p-3 align-items-center">
-                <Col sm="7">
+            <Container fluid className="d-flex align-items-center flex-wrap">
+              <Form.Group as={Row} className="align-items-center g-2">
+                <Col xs="auto">
                   <Form.Control
                     size="sm"
                     value={state.value}
@@ -54,13 +54,15 @@ export default function LoginForm() {
                     onKeyDown={(e) => handleKeyDown(e, state.value)}
                   />
                 </Col>
-                <Col sm="2">
+                <Col xs="auto">
                   <Button size="sm" onClick={() => handleSubmit(state.value)}>
                     Login
                   </Button>
                 </Col>
-                <Col sm="2">
-                   <Nav.Link as={Link} to="/Register" className="text-gray p-2">Register</Nav.Link>
+                <Col xs="auto">
+                  <Nav.Link as={Link} to="/Register" className="text-gray p-2">
+                    Register
+                  </Nav.Link>
                 </Col>
               </Form.Group>
             </Container>
@@ -68,13 +70,23 @@ export default function LoginForm() {
         </>
       ) : (
         <>
-          <Form>
-            <Container>
-              <Form.Group as={Row} className="p-3">
-                <Form.Label column sm="9" className="text-light">
+          <Form className="d-flex align-items-center flex-wrap">
+            <Container fluid className="px-2">
+              <Form.Group as={Row} className="align-items-center g-2">
+                <Form.Label
+                  column
+                  xs="auto"
+                  className="text-light text-truncate"
+                  style={{
+                    maxWidth: "150px",
+                    overflow: "hidden",
+                    whiteSpace: "nowrap",
+                    textOverflow: "ellipsis",
+                  }}
+                >
                   Hello, {state.username}!
                 </Form.Label>
-                <Col sm="2">
+                <Col xs="auto">
                   <Button size="sm" onClick={handleReset}>
                     Logout
                   </Button>

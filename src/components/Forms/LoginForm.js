@@ -18,8 +18,8 @@ export default function LoginForm() {
     dispatch(setUsername(input));
   };
   const handleKeyDown = (e, input) => {
-    e.preventDefault();
     if(e.key === "Enter") {
+      e.preventDefault();
       console.log(input);
       handleSubmit(input);
     }

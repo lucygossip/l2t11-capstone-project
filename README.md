@@ -5,6 +5,10 @@ This webstore is created as a capstone project for the HyperionDev and Imperial 
 
 ## Installation
 
+Project link:
+
+    https://github.com/lucygossip/l2t11-capstone-project
+
 To install dependencies, please use:
 
     npm install

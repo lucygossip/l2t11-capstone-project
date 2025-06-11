@@ -9,7 +9,7 @@ export default function Product() {
         <h2 className="text-center">Products</h2>
       </Col>
     </Row>
-    <ProductCards />
+    <ProductCards /> {/* Component to display product cards */}
     </>
   );
 }

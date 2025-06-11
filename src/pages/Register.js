@@ -11,7 +11,7 @@ export default function Register() {
         </Row>
         <Row className="justify-content-center p-2">
             <Col xs="10" sm="8" md="6" xl="4">
-            <RegistrationForm />
+            <RegistrationForm />  {/* Component to display registration form */}
             </Col>
         </Row> 
         </>       

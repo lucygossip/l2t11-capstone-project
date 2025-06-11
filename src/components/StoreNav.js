@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 export default function StoreNav() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  // Track width of screen
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -23,14 +24,14 @@ export default function StoreNav() {
     <>
       <Navbar variant="dark" bg="dark" expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="mx-2" />
-        <Navbar.Collapse id="basic-navbar-nav" className={windowWidth < 992 ? "mx-2" : null}>
+        <Navbar.Collapse id="basic-navbar-nav" className={windowWidth < 992 ? "mx-2" : null}> {/* Add "mx-2" class if screen width is smaller than 992 */}
           <Nav>
             <Nav.Link as={Link} to="/" className="text-light">
               {windowWidth < 992 ? (
                 "Home"
               ) : (
                 <img alt="Logo" src={Logo} className="App-logo" />
-              )}
+              )}  {/* Display "Home" on smaller screen width instead of the logo */}
             </Nav.Link>
             <Nav.Link as={Link} to="/product" className="text-light">
               Products

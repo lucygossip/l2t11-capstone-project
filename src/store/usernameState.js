@@ -1,5 +1,6 @@
 import { createSlice, current } from "@reduxjs/toolkit";
 
+/* Create slice for username state */
 const usernameSlice = createSlice({
   name: "Username",
   initialState: {
@@ -7,17 +8,17 @@ const usernameSlice = createSlice({
     username: ""
   },
   reducers: {
-    changeInputValue: (state, action) => {
+    changeInputValue: (state, action) => { // Change input value
       state.value = action.payload;
-      console.log(current(state));
+      //console.log(current(state));
     },
-    setUsername: (state, action) => {
+    setUsername: (state, action) => { // Set username
         state.username = action.payload;
-        console.log(current(state));
+        //console.log(current(state));
     },
-    clearUserName: (state) => {
+    clearUserName: (state) => { // Clear username
       state.username = ""
-      console.log(current(state));
+      //console.log(current(state));
     }
   },
 });

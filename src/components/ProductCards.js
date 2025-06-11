@@ -12,21 +12,21 @@ function ProductCards() {
   const Products = [
     {
       id: 0,
-      name: "Test",
+      name: "Apple",
       description: "A description here",
       cost: 1.25,
       image: fruit,
     },
     {
       id: 1,
-      name: "Test1",
+      name: "Banana",
       description: "Another description here",
       cost: 3,
       image: fruit,
     },
     {
       id: 2,
-      name: "Test2",
+      name: "Pear",
       description: "More stuff",
       cost: 2.48,
       image: fruit,
@@ -35,6 +35,7 @@ function ProductCards() {
 
   return (
     <>
+    {/* Styling for purple buttons that makes use of bootstrap's btn- classes */}
       <style type="text/css">
         {`
       .btn-purple {

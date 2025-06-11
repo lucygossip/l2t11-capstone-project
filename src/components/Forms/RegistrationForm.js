@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import { Form, Button } from "react-bootstrap";
 
+// Form validation
 const validate = (values) => {
   const errors = {};
   if (!values.firstname) {
@@ -21,6 +22,8 @@ const validate = (values) => {
   if (!values.password) {
     errors.password = "Required";
   } else if (
+    // Regular expression to check if the password is 8-16 characters in length, contains
+    // lower and uppercase letters, a number and a special character
     !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s])\S{8,16}$/i.test(
       values.password,
     )
@@ -46,7 +49,7 @@ const RegistrationForm = () => {
       password: "",
       confirmPassword: "",
     },
-    validate,
+    validate, // Validation is added here
     onSubmit: (values) => {
       // Submit handling code goes here
       alert(JSON.stringify(values, null, 2));
@@ -64,6 +67,7 @@ const RegistrationForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.firstname}
         />
+        {/* Error message only displays if the input contains errors */}
         {formik.touched.firstname && formik.errors.firstname ? (
           <div className="text-danger">{formik.errors.firstname}</div>
         ) : null}

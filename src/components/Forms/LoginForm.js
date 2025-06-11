@@ -4,19 +4,25 @@ import {
   changeInputValue,
   setUsername,
   clearUserName,
-} from "../../store/usernameState";
+} from "../../store/usernameState"; // State imports
 import { Form, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function LoginForm() {
   const state = useSelector((state) => state.username);
   const dispatch = useDispatch();
+
+  // Function to track the input value
   const handleChange = (event) => {
     dispatch(changeInputValue(event.target.value));
   };
+
+  // Function to handle form submit
   const handleSubmit = (input) => {
     dispatch(setUsername(input));
   };
+
+  // Function to handle submit on press of enter key
   const handleKeyDown = (e, input) => {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -24,6 +30,8 @@ export default function LoginForm() {
       handleSubmit(input);
     }
   };
+
+  // Function to reset the username on logout
   const handleReset = () => {
     dispatch(clearUserName());
   };
@@ -41,6 +49,8 @@ export default function LoginForm() {
         }
       `}
       </style>
+
+      {/* Choose which version to display base on whether the state contains a username */}
       {state.username === "" ? (
         <>
           <Form>

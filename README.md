@@ -3,7 +3,13 @@
 ## Purpose
 This webstore is created as a capstone project for the HyperionDev and Imperial College London Web Development Bootcamp.
 
-## Dependencies
+## Installation
+
+To install dependencies, please use:
+
+    npm install
+
+to add the following:
 
     "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
@@ -21,6 +27,10 @@ This webstore is created as a capstone project for the HyperionDev and Imperial 
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
     }
+
+To run the project, navigate to the project folder in the terminal, and use:
+
+    npm start
 
 ## Features
 
